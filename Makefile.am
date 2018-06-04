@@ -44,6 +44,8 @@ cpuminer_SOURCES = \
   algo/argon2/argon2d/argon2d/opt.c \
   algo/argon2/argon2d/argon2d/thread.c \
   algo/argon2/argon2d/argon2d/encoding.c \
+  algo/balloon/balloon-gate.c \
+  algo/balloon/balloon.c \
   algo/blake/sph_blake.c \
   algo/blake/blake-hash-4way.c \
   algo/blake/blake-gate.c \

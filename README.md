@@ -1,6 +1,6 @@
 cpuminer-opt is a fork of cpuminer-multi by TPruvot with optimizations
 imported from other miners developped by lucas Jones, djm34, Wolf0, pooler,
-Jeff garzik, ig0tik3d, elmad, palmd, and Optiminer, with additional
+Jeff garzik, ig0tik3d, elmad, palmd, Couiz, and Optiminer, with additional
 optimizations by Jay D Dee.
 
 All of the code is believed to be open and free. If anyone has a
@@ -52,6 +52,7 @@ Supported Algorithms
                           argon2d500    argon2d-dyn,  Dynamic (DYN)
                           argon2d4096   argon2d-uis, Unitus, (UIS)
                           axiom         Shabal-256 MemoHash
+                          balloon
                           bastion
                           blake         Blake-256 (SFR)
                           blakecoin     blake256r8
