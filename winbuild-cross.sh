@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCAL_LIB="$HOME/usr/lib"
+LOCAL_LIB="$HOME/win64"
 
 export LDFLAGS="-L$LOCAL_LIB/curl/lib -L$LOCAL_LIB/gmp/lib -L$LOCAL_LIB/openssl/lib"
 export CPPFLAGS="-I$LOCAL_LIB/gmp/include"
@@ -17,13 +17,13 @@ cp /usr/lib/gcc/x86_64-w64-mingw32/5.3-win32/libgcc_s_seh-1.dll release/
 cp $LOCAL_LIB/openssl/bin/libcrypto-1_1-x64.dll release/
 cp $LOCAL_LIB/curl/bin/libcurl-4.dll release/
 
-# make distclean || echo clean
-# rm -f config.status
-# ./autogen.sh || echo done
-# CFLAGS="-O3 -march=core-avx2 -msha -Wall" ./configure $F
-# make -j8
-# strip -s cpuminer.exe
-# mv cpuminer.exe release/cpuminer-avx2-sha.exe
+make distclean || echo clean
+rm -f config.status
+./autogen.sh || echo done
+CFLAGS="-O3 -march=core-avx2 -msha -Wall" ./configure $F
+make -j8
+strip -s cpuminer.exe
+mv cpuminer.exe release/cpuminer-avx2-sha.exe
 
 # make clean || echo clean
 # rm -f config.status
@@ -51,12 +51,12 @@ cp $LOCAL_LIB/curl/bin/libcurl-4.dll release/
 # #strip -s cpuminer.exe
 # #mv cpuminer.exe release/cpuminer-avx-sha.exe
 
-# make clean || echo clean
-# rm -f config.status
-# CFLAGS="-O3 -march=core-avx2 -Wall" ./configure $F 
-# make -j8
-# strip -s cpuminer.exe
-# mv cpuminer.exe release/cpuminer-avx2.exe
+make clean || echo clean
+rm -f config.status
+CFLAGS="-O3 -march=core-avx2 -Wall" ./configure $F 
+make -j8
+strip -s cpuminer.exe
+mv cpuminer.exe release/cpuminer-avx2.exe
 
 # #make clean || echo clean
 # #rm -f config.status
@@ -66,20 +66,19 @@ cp $LOCAL_LIB/curl/bin/libcurl-4.dll release/
 # #mv cpuminer.exe release/cpuminer-aes-sha.exe
 
 
-make distclean || echo clean
-rm -f config.status
-./autogen.sh || echo done
-CFLAGS="-O3 -march=corei7-avx -Wall" ./configure $F 
-make -j8
-#strip -s cpuminer.exe
-mv cpuminer.exe release/cpuminer-aes-avx.exe
-
-# make clean || echo clean
+# make distclean || echo clean
 # rm -f config.status
-# CFLAGS="-O3 -maes -msse4.2 -Wall" ./configure $F
+# CFLAGS="-O3 -march=corei7-avx -Wall" ./configure $F 
 # make -j8
 # strip -s cpuminer.exe
-# mv cpuminer.exe release/cpuminer-aes-sse42.exe
+# mv cpuminer.exe release/cpuminer-aes-avx.exe
+
+make clean || echo clean
+rm -f config.status
+CFLAGS="-O3 -maes -msse4.2 -Wall" ./configure $F
+make -j8
+strip -s cpuminer.exe
+mv cpuminer.exe release/cpuminer-aes-sse42.exe
 
 # #make clean || echo clean
 # #rm -f config.status
@@ -88,11 +87,11 @@ mv cpuminer.exe release/cpuminer-aes-avx.exe
 # #strip -s cpuminer.exe
 # #mv cpuminer.exe release/cpuminer-sse42.exe
 
-# make clean || echo clean
-# rm -f config.status
-# CFLAGS="-O3 -march=core2 -Wall" ./configure $F
-# make -j8
-# strip -s cpuminer.exe
-# mv cpuminer.exe release/cpuminer-sse2.exe
-# make clean || echo clean
+make clean || echo clean
+rm -f config.status
+CFLAGS="-O3 -march=core2 -Wall" ./configure $F
+make -j8
+strip -s cpuminer.exe
+mv cpuminer.exe release/cpuminer-sse2.exe
+make clean || echo clean
 

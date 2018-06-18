@@ -6,7 +6,7 @@
 #fi
 
 # Linux build
-
+sed -i 's/"-lpthreadGC2"/"-lpthread"/g' configure.ac
 make distclean || echo clean
 
 rm -f config.status
